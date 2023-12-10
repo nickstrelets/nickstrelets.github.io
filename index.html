@@ -4,22 +4,35 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <script>
-            function checkPassord(element) {
-                if(event.key === 'Enter') {
-                    const inputPassword = document.getElementById("input").value;
-                    let correctPassword = 1;
-                    if (inputPassword == correctPassword) {
-                        document.getElementById("content").style.visibility = "visible";
-                        document.getElementById("input").style.visibility = "hidden";
-                    } else {
-                        location.reload();
-                    }
-                }
+            function checkPassword() {
+				const inputPassword = document.getElementById("input").value;
+				let correctPassword = 1;
+				if (inputPassword == correctPassword) {
+					document.getElementById("content").style.visibility = "visible";
+					document.getElementById("input").style.visibility = "hidden";
+					document.getElementById("button").style.visibility = "hidden";
+				} else {
+					location.reload();
+				}
             }
+			function checkPasswordOnKeyDown(element){
+                if(event.key === 'Enter') {
+					const inputPassword = document.getElementById("input").value;
+					let correctPassword = 1;
+					if (inputPassword == correctPassword) {
+						document.getElementById("content").style.visibility = "visible";
+						document.getElementById("input").style.visibility = "hidden";
+						document.getElementById("button").style.visibility = "hidden";
+					} else {
+						location.reload();
+					}
+                }
+			}
         </script>
     </head>
     <body>
-        <input id="input" type="password" placeholder="password" onkeydown="checkPassord(this)" autofocus>
+        <input id="input" type="password" placeholder="password" onkeydown="checkPasswordOnKeyDown(this)" autofocus>
+		<button id="button" onclick="checkPassword()">Enter</button>
         <div id="content" style="visibility:hidden;text-align:center">
             <h1 style="color:red;">Зачем я работаю</h1>
             <p>Благодаря усилиям на работе у меня будет свободное время, и деньги, которые я буду тратить в это свободное время.</p>

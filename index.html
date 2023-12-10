@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function checkPassord(element) {
+                if(event.key === 'Enter') {
+                    const inputPassword = document.getElementById("input").value;
+                    let correctPassword = 1;
+                    if (inputPassword == correctPassword) {
+                        document.getElementById("content").style.visibility = "visible";
+                        document.getElementById("input").style.visibility = "hidden";
+                    } else {
+                        location.reload();
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input id="input" type="password" placeholder="password" onkeydown="checkPassord(this)" autofocus>
+        <div id="content" style="visibility:hidden;text-align:center">
+            <h1 style="color:red;">Зачем я работаю</h1>
+            <p>Благодаря усилиям на работе у меня будет свободное время, и деньги, которые я буду тратить в это свободное время.</p>
+            <p>Я начну встречаться с девушками. Я погружусь в эти часть жизни. Я постоянно буду на сайтах знакомств, буду ходить с девушками в кафе, и еще куда-нибудь. Буду проводить с девушками время наедине.</p>
+            <div id="girls">
+                <img src="./girls/1.jpg" width="500">
+            </div>
+            <p>Увеличивая свой заработок, я смогу добавить в жизнь больше различных занятий на свободное время. Например, я куплю мотоцикл.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mniyEwClYVA?si=oXJtXpINa4K9wHwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </body>
+</html>

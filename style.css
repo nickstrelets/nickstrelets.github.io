@@ -1,4 +1,5 @@
 img {
+    padding-bottom: 1cm;
     max-width: 100%;
     max-height: 100vh;
     width: auto;
@@ -18,6 +19,10 @@ iframe {
     width: auto;
     margin: auto;
 } 
+.girls {
+    display: flex;
+    flex-direction: column;
+}
 @media only screen and (min-width: 768px) {
     .video {
         position: relative;

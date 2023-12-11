@@ -4,3 +4,11 @@ img {
     width: auto;
     margin: auto;
 }
+h1 {
+    color:red;
+    font-size: 220%;
+}
+p {
+    font-weight: bold;
+    font-size: 120%;
+}

@@ -5,9 +5,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
+            const correctPassword = "4/82l9M(2S3j";
             function checkPassword() {
 				const inputPassword = document.getElementById("input").value;
-				let correctPassword = "4/82l9M(2S3j";
 				if (inputPassword == correctPassword) {
 					document.getElementById("content").style.visibility = "visible";
 					document.getElementById("input").style.visibility = "hidden";
@@ -18,15 +18,7 @@
             }
 			function checkPasswordOnKeyDown(element){
                 if(event.key === 'Enter') {
-					const inputPassword = document.getElementById("input").value;
-					let correctPassword = 1;
-					if (inputPassword == correctPassword) {
-						document.getElementById("content").style.visibility = "visible";
-						document.getElementById("input").style.visibility = "hidden";
-						document.getElementById("button").style.visibility = "hidden";
-					} else {
-						location.reload();
-					}
+                    checkPassword();
                 }
 			}
         </script>
@@ -42,7 +34,9 @@
 			<img src="./girls/2.jpg">
             <img src="./girls/3.jpg">
             <p>Увеличивая свой заработок, я смогу добавить в жизнь больше различных занятий на свободное время. Например, я куплю мотоцикл.</p>
-            <iframe src="https://www.youtube.com/embed/mniyEwClYVA?si=oXJtXpINa4K9wHwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/mniyEwClYVA?si=oXJtXpINa4K9wHwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
     </body>
 </html>

@@ -7,21 +7,26 @@
         <script>
             const correctPassword = "4/82l9M(2S3j";
             function getRandomIntFromOneToArgument(max) {
-                console.log(Math.floor(Math.random() * max) + 1);
-                return Math.floor(Math.random() * max);
+                return Math.floor(Math.random() * max) + 1;
             }
             function onPageLoad(){
+                getRandomIntFromOneToArgument(3);
                 const imagesInFolderGirls = 32;
                 const girlsImagesNumber = 3;
                 let randomNumberInRange = 0;
                 let imagesNumbers = [];
                 let innerCount = 0;
+                // 1. Get 3 different numbers
+                while (imagesNumbers.length < 3){
+                    randomNumberInRange = getRandomIntFromOneToArgument(imagesInFolderGirls);
+                    if(imagesNumbers.includes(randomNumberInRange)){
+                        continue;
+                    }
+                    imagesNumbers.push(randomNumberInRange);
+                }
+                // 2. Set images, using 3 different numbers
                 for(let i = 1; i <= girlsImagesNumber; i++){
-                    do {
-                        randomNumberInRange = getRandomIntFromOneToArgument(imagesInFolderGirls);
-                        imagesNumbers.push(randomNumberInRange);
-                    } while (!imagesNumbers.includes(randomNumberInRange))
-                    document.getElementById("girl" + i).src = "./girls/" + randomNumberInRange + ".jpg";                
+                    document.getElementById("girl" + i).src = "./girls/" + imagesNumbers[i - 1] + ".jpg";                
                 }
             }
             function checkPassword() {

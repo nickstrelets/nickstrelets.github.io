@@ -19,7 +19,7 @@ iframe {
     width: auto;
     margin: auto;
 } 
-.girls {
+.vertical_images {
     display: flex;
     flex-direction: column;
 }
